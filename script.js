@@ -6,19 +6,17 @@ let prevPageX, prevScrollLeft, positionDiff;
 let count = 0;
 
 
-
-
 const showHideIcons = (element) => {
     if (element === carousel[0]) {
         let scrollWidth = element.scrollWidth - element.clientWidth;
         arrowIcons[0].style.display = element.scrollLeft == 0 ? "none" : "block";
         arrowIcons[1].style.display = element.scrollLeft == scrollWidth ? "none" : "block";
     } else if (element === carousel[1]) {
-        let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+        let scrollWidth = element.scrollWidth - element.clientWidth;
         arrowIcons[2].style.display = element.scrollLeft == 0 ? "none" : "block";
         arrowIcons[3].style.display = element.scrollLeft == scrollWidth ? "none" : "block";
     } else if (element === carousel[2]) {
-        let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+        let scrollWidth = element.scrollWidth - element.clientWidth;
         arrowIcons[4].style.display = element.scrollLeft == 0 ? "none" : "block";
         arrowIcons[5].style.display = element.scrollLeft == scrollWidth ? "none" : "block";
     }
@@ -86,4 +84,20 @@ carousel.forEach(element => {
     element.addEventListener("touchend", dragStop);
 })
 
-
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+  
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+  
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+  
+  window.addEventListener("scroll", reveal);

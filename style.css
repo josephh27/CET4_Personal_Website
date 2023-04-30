@@ -104,6 +104,7 @@ body {
     margin-top: 100px;
 }
 
+
 .profile-photo {
     width: 320px;
     height: 320px;
@@ -200,11 +201,11 @@ span.greet::before {
     
 }
 
-.hobbies .hobby-container:nth-child(2) .hobby-title {
+.hobbies .hobby-container:nth-child(3) .hobby-title {
     border-color: #3771A1;
 }
 
-.hobbies .hobby-container:nth-child(3) .hobby-title {
+.hobbies .hobby-container:nth-child(4) .hobby-title {
     border-color: #e3d56f;
 }
 
@@ -255,7 +256,74 @@ span.greet::before {
     margin-left: 0px;
 }
 
+.section-name {
+    font-size: 2.5rem;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #3771A1; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto 0 0; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 30%}
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #3771A1; }
+  }
 
+.active.fade-left {
+    animation: fade-left 1s ease-in;
+}
+
+.active.fade-right {
+    animation: fade-right 1s ease-in;
+}
+
+.active.fade-bottom {
+    animation: fade-bottom 1s ease-in;
+}
+
+@keyframes fade-left {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-right {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+@keyframes fade-bottom {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
 
 @media only screen and (min-width: 1300px) {
     .about {
