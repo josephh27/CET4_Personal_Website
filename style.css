@@ -409,6 +409,12 @@ span.greet::before {
     height: 100%;
 }
 
+.project {
+    width: 100%;
+}
+.info h6 {
+    font-size: 1.5rem;
+}
 @media only screen and (min-width: 1300px) {
     .about {
         width: 600px;
