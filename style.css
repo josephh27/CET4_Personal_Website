@@ -6,6 +6,7 @@
     --tab-anchor: #d0e8f2;
     --text: white;
     --skills-bg: #0D1117;
+    --footer-bg: #0c1117;
 }
 
 * {
@@ -34,6 +35,10 @@ body {
     padding: 0px 30px;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
 
+}
+
+#current-tab {
+    border-bottom: 5px solid #51cae8;
 }
 
 .hamburger {
@@ -95,6 +100,31 @@ body {
     line-height: 60px;
 }
 
+.hamburger {
+	display: none;
+	cursor: pointer;
+    margin-left: auto;
+}
+
+.bar {
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all -0.3s ease-in-out;
+}
+
+.bar {
+	background-color: white;
+}
+
+.black-header .bar{
+	background-color: white;
+}
+
+
+
 .hero-section {
     display: flex;
     align-items: center;
@@ -106,8 +136,7 @@ body {
 
 
 .profile-photo {
-    width: 320px;
-    height: 320px;
+    opacity: 0.7;
 }
 
 .about {
@@ -167,7 +196,7 @@ span.greet::before {
     height: 400px;
     background: var(--skills-bg);
     padding: 30px 20px;
-    gap: 30px;
+    gap: 50px;
     border-radius: 10px;
     
 }
@@ -293,6 +322,34 @@ span.greet::before {
     animation: fade-bottom 1s ease-in;
 }
 
+.footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 100px 50px 100px;
+    background: var(--footer-bg);
+    margin-top: 100px;
+    gap: 50px;
+}
+
+.about-footer {
+    max-width: 380px;
+}
+
+.social-medias > img {
+    width: 50px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links a {
+    font-size: 1.2rem;
+    color: var(--tab-anchor);
+}
+
 @keyframes fade-left {
     0% {
       transform: translateX(-100px);
@@ -326,6 +383,16 @@ span.greet::before {
     }
 }
 
+.main-projects {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px auto;
+    padding: 50px 0px;
+    gap: 50px;
+}
+
 @media only screen and (min-width: 1300px) {
     .about {
         width: 600px;
@@ -341,14 +408,82 @@ span.greet::before {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        height: 600px;
+        height: 620px;
     }
+
+    .footer {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .about-footer {
+        max-width: 260px;
+    }
+    
 }
+
 
 @media only screen and (max-width: 760px) {
     .tab-list {
         display: none;
     }
+
+    .hamburger {
+		display: block;
+	}
+
+	.hamburger.active .bar:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.active .bar:nth-child(1){
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.hamburger.active .bar:nth-child(3){
+		transform: translateY(-8px) rotate(-45deg);
+	}
+	
+	.header:has(.right-header.active) {
+		position: fixed;
+	}
+
+	.right-header {
+		position: fixed;
+		left: -100%;
+		top: 80px;
+		gap: 0;
+		flex-direction: column;
+		width: 100%;
+		text-align: center;
+		transition: 0.3s;
+		box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5)
+	}
+
+    .right-header.active {
+        background: var(--bg-main);
+        margin-top: -20px;
+		padding-bottom: 20px;
+        background: rgba(22, 28, 36, 0.6);
+		left: 0;
+        height: auto;
+	}
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 99;
+    }
+
+    .tab-list {
+        display: block;
+        width: 100%;
+    }
+
+    .tab-list .tab {
+        width: 100%;
+    }
+
     .hero-section {
         flex-direction: column;
         gap: 100px;
@@ -379,12 +514,20 @@ span.greet::before {
         height: auto;
     }
 
+    .footer {
+        flex-direction: column;
+    }
+
+    .about-footer {
+        max-width: 80%;
+        padding-right: 0px;
+    }
+
 }
 
 @media only screen and (max-width: 400px) {
     .profile-photo {
         width: 280px;
-        height: 280px;
     }
 
     .about h1 {
@@ -402,5 +545,9 @@ span.greet::before {
 
     .hobby-images > img:last-child {
         right: -25px;
+    }
+
+    .section-name {
+        font-size: 2.2rem;
     }
 }

@@ -1,10 +1,11 @@
 const carousel = document.querySelectorAll(".carousel");
 const arrowIcons = document.querySelectorAll(".hobby-images > img");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".right-header");
 
 let isDragStart = false;
 let prevPageX, prevScrollLeft, positionDiff;
 let count = 0;
-
 
 const showHideIcons = (element) => {
     if (element === carousel[0]) {
@@ -94,10 +95,14 @@ function reveal() {
   
       if (elementTop < windowHeight - elementVisible) {
         reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
       }
     }
   }
   
   window.addEventListener("scroll", reveal);
+
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+})

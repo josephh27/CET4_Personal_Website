@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <meta name="theme-color" content="#fff">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- css linking -->
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+    <!-- nav bar-->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Sudoku</a>
+            <div class="dark-mode-toggle">
+                <div class="bx bxs-sun"></div>
+                <div class="bx bxs-moon"></div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- actual content excluding nav bar -->
+    <div class="main">
+        <div class="screen">
+            <!-- start screen -->
+            <div class="start-screen active">
+                <input type="text" placeholder="Your name" id="name-input" maxlength=11>
+                <div class="button" id="mode-switch">
+                    <div class="left-arrow">
+                        <div class="chevron"></div>
+                        <div class="chevron"></div>
+                        <div class="chevron"></div>
+                    </div>
+                    <div class="mode">Easy</div>
+                    <div class="right-arrow">
+                        <div class="chevron"></div>
+                        <div class="chevron"></div>
+                        <div class="chevron"></div>
+                    </div>
+                </div>
+                <div class="button" id="continue-game">Continue</div>
+                <div class="button" id="start-new-game">New Game</div>
+            </div>
+            <!-- end of start screen -->
+
+            <!-- in-game screen -->
+            <div class="in-game-screen">
+                <div class="in-game-extras">
+                    <div class="in-game-change-mode">
+                        <h2 id="variety-title">Varieties</h2>
+                        <div class="variety"><a href="index.html">Normal Sudoku</a></div>
+                        <div class="variety"><a href="blinking_sudoku.html">Blinking Sudoku</a></div>
+                        <div class="variety"><a href="flooding_sudoku.html">Flooding Sudoku</a></div>
+                        <div class="variety current-game">Letter Sudoku</div>
+                    </div>
+                    <div class="leaderboard">
+                        <h2 id="top-records">Top Records</h2>
+                        <div record-holder-container id="record-holder-container"></div>
+                        <template id="leaderboard-template">
+                            <div mode-record></div>                  
+                            <div record-holder></div>
+                            <div time-record></div>                     
+                        </template>
+                    </div>
+                </div>
+
+                <div class="sudoku-grid">
+                    <!-- 81 cells -->
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                    <div class="grid-cell" tabindex = "1"></div>
+                </div>
+
+                <!-- user interface below the grid -->
+                <div class="in-game-info">
+                    <div class="in-game-info-box ">
+                        <span id="in-game-name">Unknown</span>
+                    </div>
+                    <div class="in-game-info-box">
+                        <span id="in-game-level">Unknown</span>
+                    </div>
+                
+                    <div class="in-game-info-box in-game-info-time">
+                        <span id="game-time"></span>
+                        <div id="pause-button">
+                            <i class="bx bx-pause"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="numbers">
+                        <div class="number" value="a">a</div>
+                        <div class="number" value="b">b</div>
+                        <div class="number" value="c">c</div>
+                        <div class="number" value="d">d</div>
+                        <div class="number" value="e">e</div>
+                        <div class="number" value="f">f</div>
+                        <div class="number" value="g">g</div>
+                        <div class="number" value="h">h</div>
+                        <div class="number" value="i">i</div>
+                        <div id="delete-button">X</div>
+                    </div>
+                </div>
+                <!-- end of user interface below the grid -->
+            </div>
+            <!-- end of in-game screen -->
+
+            <!-- pause screen -->
+            <div class="pause-screen">
+                <div class="button" id="resume-button">Resume</div>
+                <div class="button another-new-game">New Game</div>
+            </div>
+            <!-- end of pause screen -->
+
+            <!-- result screen -->
+            <div class="result-screen">
+                <div class="congratulate">Completed</div>
+                <div class="info">Time</div>
+                <div id="result-time"></div>
+                <div class="button another-new-game">New Game</div>
+            </div>
+            <!-- end of result screen -->
+        </div>
+    </div>
+    <!-- end of actual content excluding nav bar -->
+    
+    <script src="scripts/information.js"></script>
+    <script type="module" src="scripts/letter_sudoku.js"></script>
+    <script type="module" src="scripts/letter.js"></script>
+    
+</body>
+</html>
+
+
