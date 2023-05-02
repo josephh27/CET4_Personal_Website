@@ -357,7 +357,7 @@ span.greet::before {
 .about-footer {
     max-width: 400px;
 }
-.social-medias > img {
+.social-medias > a > img {
     width: 50px;
 }
 
@@ -559,6 +559,20 @@ span.greet::before {
     resize: none;
 }
 
+.contact-submit {
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 20px;
+    font-weight: bold;
+    color: white;
+    background: #51cae8;
+    cursor: pointer;
+}
+
+.contact-submit:hover {
+    background: #228199;
+}
 
 @media only screen and (max-width: 1042px) {
 
