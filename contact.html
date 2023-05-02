@@ -9,59 +9,131 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="left-header">
-            <a href="index.html" class="owner">Jason Buhain</a>
-        </div>
-        <div class="right-header">
-            <div class="tab-list">
-                <div class="tab"><a href="projects.html">My Projects</a></div>
-                <div class="tab"><a href="education.html">Education</a></div>
-                <div class="tab" id="current-tab"><a href="contact.html">Contact</a></div>
+        <div class="navbar-wrapper">
+            <div class="left-header">
+                <a href="index.html" class="owner">Jason Buhain</a>
             </div>
-        </div>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <div class="right-header">
+                <div class="tab-list">
+                    <div class="tab"><a href="projects.html">My Projects</a></div>
+                    <div class="tab"><a href="education.html">Education</a></div>
+                    <div class="tab" id="current-tab"><a href="contact.html">Contact</a></div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </div>
     <div class="main-contact">
-        <div class="contact-info">
-            <div class="info">
-                <div>
-                    <h6>Home</h6>
-                    <p class="info-description">Angono, Rizal</p>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="info">
+                    <img src="images/info-icons/location.png">
+                    <div>
+                        <h6>Home</h6>
+                        <p class="info-description">Angono, Rizal</p>
+                    </div>
+                </div>
+                <div class="info">
+                    <img src="images/info-icons/call.png">
+                    <div>
+                        <h6>Call me</h6>   
+                        <a href="tel:09392081598">
+                            <p class="info-description">(+63) 9392081598</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="info">
+                    <img src="images/info-icons/mail.png">
+                    <div>
+                        <h6>Talk to me</h6>
+                        <p class="info-description">
+                            <p>Main Email</p>
+                            <a href="">Mordecool2700@gmail.com</a>
+                            <p>Professional Email</p>
+                            <a href="">josephbuhain27@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="info">
+                    <img src="images/info-icons/clock.png">
+                    <div>
+                        <h6>Active hours</h6>
+                        <p class="info-description">
+                            Mon-Sun: 9am - 10pm
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="info">
-                <div>
-                    <h6>Call me</h6>   
-                    <p class="info-description">(+63) 9392081598</p>
-                </div>
-            </div>
-            <div class="info">
-                <div>
-                    <h6>Talk to me</h6>
-                    <p class="info-description">
-                        <p>Main Email</p>
-                        <a href="">Mordecool2700@gmail.com</a>
-                        <p>Professional Email</p>
-                        <a href="">josephbuhain27@gmail.com</a>
-                    </p>
-                </div>
-            </div>
-            <div class="info">
-                <div>
-                    <h6>Active hours</h6>
-                    <p class="info-description">
+            <div class="form-wrapper">
+                <h1 class="form-title">Ready To Have Good Time?</h1>
+                <form action="/" method="GET">
+                    <div class="questions">
+                        <div class="name-question"> 
+                            <div class="question">
+                                <input type="text" id="first-name" name="FirstName" class="input-box" placeholder="First Name">
+                                <label for="first-name">First Name</label>
 
-                    </p>
+                            </div>
+                            <div class="question">
+                                <input type="text" id="last-name" name="LastName" class="input-box" placeholder="Last Name">
+                                <label for="last-name">Last Name</label>
+
+                            </div>
+                        </div>
+                        <div class="question"> 
+                            <input type="text" id="email" name="Email" class="input-box" placeholder="Email">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="question">
+                            <input type="text" id="phone-number" name="PhoneNumber" class="input-box" placeholder="Phone number">
+                            <label for="phone-number">Phone number</label>
+                        </div>
+                        <div class="textarea-container question">
+                            <textarea class="input-box">
+
+                            </textarea>
+                            <label>Message</label>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>     
+    </div>
+
+    <div class="footer">
+        <div class="footer-wrapper">
+            <div class="about-footer">
+                <h1>About</h1>
+                <p>
+                    Joseph Jason Buhain is an aspiring backend developer that is currently studying at the Polytechnic University of the Philippines.
+                </p>
+            </div>
+            <div class="quick-links">
+                <h1>
+                    Quick Links
+                </h1>
+                <div class="footer-links">
+                    <a href="projects.html">My Projects</a>
+                    <a href="education.html">Education</a>
+                    <a href="contact.html">Contact</a>
                 </div>
+                
+            </div>
+            <div class="social-medias">
+                <h1>Social</h1>
+                <img src="images/social-icons/facebook.png">
+                <img src="images/social-icons/instagram.png">
+                <img src="images/social-icons/linkedin.png">
+                <img src="images/social-icons/twitter.png">
             </div>
         </div>
-        <div class="form-wrapper">
-
-        </div>
+       
+        
     </div>
     <script src="script.js"></script>
 </body>
